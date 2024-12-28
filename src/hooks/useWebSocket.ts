@@ -1,5 +1,5 @@
-import { useEffect, useCallback, useRef } from 'react';
-import type { SequencerEvent } from '../types/sequencer';
+import { useEffect, useCallback, useRef } from "react";
+import type { SequencerEvent } from "../types/sequencer";
 
 export function useWebSocket(onEvent: (event: SequencerEvent) => void) {
   const ws = useRef<WebSocket | null>(null);

@@ -1,9 +1,9 @@
-import React, { useState, useEffect, useCallback } from 'react';
-import { Grid } from './Grid';
-import { Controls } from './Controls';
-import { useSequencer } from '../hooks/useSequencer';
-import { useAudioContext } from '../hooks/useAudioContext';
-import { NOTES } from '../constants/music';
+import React, { useState, useEffect, useCallback } from "react";
+import { Grid } from "./Grid";
+import { Controls } from "./Controls";
+import { useSequencer } from "../hooks/useSequencer";
+import { useAudioContext } from "../hooks/useAudioContext";
+import { NOTES } from "../constants/music";
 
 export function Sequencer() {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -23,7 +23,7 @@ export function Sequencer() {
   useEffect(() => {
     let intervalId: number;
     if (isPlaying) {
-      const stepTime = (60 / tempo) * 1000 / 4; // 16th notes
+      const stepTime = ((60 / tempo) * 1000) / 4; // 16th notes
       intervalId = window.setInterval(playStep, stepTime);
     }
     return () => clearInterval(intervalId);
@@ -37,11 +37,7 @@ export function Sequencer() {
         onPlayPause={() => setIsPlaying(!isPlaying)}
         onTempoChange={updateTempo}
       />
-      <Grid
-        grid={grid}
-        currentBeat={currentBeat}
-        onToggle={toggleNote}
-      />
+      <Grid grid={grid} currentBeat={currentBeat} onToggle={toggleNote} />
     </div>
   );
 }
