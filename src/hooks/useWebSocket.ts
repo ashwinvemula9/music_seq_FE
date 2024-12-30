@@ -6,7 +6,7 @@ export function useWebSocket(onEvent: (event: SequencerEvent) => void) {
 
   useEffect(() => {
     // Use relative path for WebSocket connection
-    ws.current = new WebSocket(`ws://${window.location.hostname}:8080`);
+    ws.current = new WebSocket(`https://music-seq-be.onrender.com`);
 
     ws.current.onmessage = (event) => {
       const data = JSON.parse(event.data);
