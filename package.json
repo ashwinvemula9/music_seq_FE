@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://ashwinvemula9.github.io/Music-Sequencer/",
+  "homepage": "https://ashwinvemula9.github.io/music_seq_FE/",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
